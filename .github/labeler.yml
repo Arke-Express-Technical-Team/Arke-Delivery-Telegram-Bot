@@ -1,0 +1,22 @@
+# Pull request labels based on changed paths and task branch prefixes.
+# Syntax for actions/labeler@v7: https://github.com/actions/labeler
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "README.md"
+          - "docs/**"
+          - "**/*.md"
+  - head-branch: '^docs/'
+
+feature:
+  - head-branch: '^feature/'
+
+bugfix:
+  - head-branch: '^(fix|hotfix)/'
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/workflows/**"
+          - ".github/labeler.yml"
+  - head-branch: '^ci/'
